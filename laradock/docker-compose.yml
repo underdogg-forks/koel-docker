@@ -9,20 +9,12 @@ networks:
 volumes:
   mysql:
     driver: ${VOLUMES_DRIVER}
-
-
   memcached:
     driver: ${VOLUMES_DRIVER}
   redis:
     driver: ${VOLUMES_DRIVER}
-
-
-
-
   phpmyadmin:
     driver: ${VOLUMES_DRIVER}
-
-
   elasticsearch:
     driver: ${VOLUMES_DRIVER}
 
@@ -169,8 +161,6 @@ services:
         - frontend
         - backend
 
-
-
 ### MySQL ################################################
     mysql:
       build:
@@ -201,8 +191,6 @@ services:
       networks:
         - backend
 
-
-
 ### Memcached ############################################
     memcached:
       build: ./memcached
@@ -226,8 +214,6 @@ services:
       networks:
         - backend
 
-
-
 ### Beanstalkd Console ###################################
     beanstalkd-console:
       build: ./beanstalkd-console
@@ -237,7 +223,6 @@ services:
         - beanstalkd
       networks:
         - backend
-
 
 ### phpMyAdmin ###########################################
     phpmyadmin:
@@ -254,9 +239,6 @@ services:
       networks:
         - frontend
         - backend
-
-
-
 
 ### ElasticSearch ########################################
     elasticsearch:
@@ -279,8 +261,6 @@ services:
       networks:
         - frontend
         - backend
-
-
 
 ### Laravel Echo Server #######################################
     laravel-echo-server:

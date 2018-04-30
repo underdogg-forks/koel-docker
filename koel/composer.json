@@ -49,8 +49,7 @@
             "Tests\\": "tests/"
         },
         "classmap": [
-            "tests/TestCase.php",
-            "tests/e2e"
+            "tests/TestCase.php"
         ]
     },
     "scripts": {

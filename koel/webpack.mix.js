@@ -20,14 +20,14 @@ if (mix.config.hmr) {
     process.exit()
   })
 } else {
-  mix.copy('resources/assets/img', 'public/img', false)
-    .copy('node_modules/font-awesome/fonts', 'public/fonts', false)
+  mix.copy('resources/assets/img', '/img', false)
+    .copy('node_modules/font-awesome/fonts', '/fonts', false)
 }
 
-mix.js('resources/assets/js/app.js', 'public/js')
-  .sass('resources/assets/sass/app.scss', 'public/css')
-  .js('resources/assets/js/remote/app.js', 'public/js/remote')
-  .sass('resources/assets/sass/remote.scss', 'public/css')
+mix.js('resources/assets/js/app.js', '/js')
+  .sass('resources/assets/sass/app.scss', '/css')
+  .js('resources/assets/js/remote/app.js', '/js/remote')
+  .sass('resources/assets/sass/remote.scss', '/css')
 
 if (mix.config.inProduction) {
   mix.version()

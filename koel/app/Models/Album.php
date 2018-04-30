@@ -180,7 +180,7 @@ class Album extends Model
      */
     private function generateRandomCoverPath($extension)
     {
-        return app()->publicPath().'/public/img/covers/'.uniqid('', true).".$extension";
+        return app()->publicPath().'/img/covers/'.uniqid('', true).".$extension";
     }
 
     /**
@@ -202,7 +202,7 @@ class Album extends Model
      */
     public function getCoverAttribute($value)
     {
-        return app()->staticUrl('public/img/covers/'.($value ?: self::UNKNOWN_COVER));
+        return '/img/covers/'.($value ?: self::UNKNOWN_COVER);
     }
 
     /**

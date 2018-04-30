@@ -170,6 +170,11 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
 
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+        Aws\Laravel\AwsServiceProvider::class,
+
+
+
         /*
          * Application Service Providers...
          */

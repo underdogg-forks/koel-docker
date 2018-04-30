@@ -46,16 +46,10 @@ class Application extends IlluminateApplication
     {
         static $manifest = null;
 
-        $manifestFile = $manifestFile ?: public_path('public/mix-manifest.json');
+        $manifestFile = $manifestFile ?: public_path('/mix-manifest.json');
 
         if ($manifest === null) {
             $manifest = json_decode(file_get_contents($manifestFile), true);
-        }
-
-        if (isset($manifest[$file])) {
-            return file_exists(public_path('public/hot'))
-                    ? "http://localhost:8080{$manifest[$file]}"
-                    : $this->staticUrl("public{$manifest[$file]}");
         }
 
         throw new InvalidArgumentException("File {$file} not defined in asset manifest.");
@@ -74,7 +68,7 @@ class Application extends IlluminateApplication
     {
         $cdnUrl = trim(config('koel.cdn.url'), '/ ');
 
-        return $cdnUrl ? $cdnUrl.'/'.trim(ltrim($name, '/')) : trim(asset($name));
+        return NULL;
     }
 
     /**

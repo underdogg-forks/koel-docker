@@ -171,7 +171,7 @@ class Artist extends Model
      */
     private function generateRandomImagePath($extension)
     {
-        return app()->publicPath().'/public/img/artists/'.uniqid('', true).".$extension";
+        return app()->publicPath().'/img/artists/'.uniqid('', true).".$extension";
     }
 
     /**
@@ -183,7 +183,7 @@ class Artist extends Model
      */
     public function getImageAttribute($value)
     {
-        return $value ? app()->staticUrl("public/img/artists/$value") : null;
+        return $value ? "/img/artists/$value" : null;
     }
 
     public function getHasImageAttribute()
